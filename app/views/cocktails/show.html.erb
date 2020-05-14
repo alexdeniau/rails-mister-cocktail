@@ -1,1 +1,32 @@
 <h1> Show </h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @cocktail.name %>
+      </p>
+
+      <h5>Doses</h5>
+      <ul class="list-group">
+        <% @cocktail.doses.each do |dose|%>
+          <li class="list-group-item">
+            <%= dose.description %>
+            <%= dose.ingredient %>
+            <%= link_to 'Remove', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }  %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+
+      <br>
+
+      <%= link_to 'Back', cocktails_path %>
+
+    </div>
+  </div>
+</div>
