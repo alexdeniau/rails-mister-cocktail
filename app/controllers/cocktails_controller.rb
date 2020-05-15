@@ -24,12 +24,6 @@ class CocktailsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @cocktail = Cocktail.find(params[:id])
-  #   @cocktail.destroy
-  #   redirect_to cocktail_path(@cocktails)
-  # end
-
   private
 
   def set_cocktail
