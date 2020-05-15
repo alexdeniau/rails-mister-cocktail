@@ -1,4 +1,3 @@
-<h1> Show </h1>
 
 <div class="container">
   <div class="row">
@@ -6,17 +5,18 @@
       <p id="notice"><%= notice %></p>
 
       <p>
-        <strong>Name:</strong>
-        <%= @cocktail.name %>
+        <h1> <%= "#{@cocktail.name}" %> </h1>
       </p>
 
-      <h5>Doses</h5>
+      <h4>Ingredients:</h4>
       <ul class="list-group">
         <% @cocktail.doses.each do |dose|%>
           <li class="list-group-item">
-            <%= dose.description %>
-            <%= dose.ingredient %>
-            <%= link_to 'Remove', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }  %>
+            <%= dose.ingredient.name %>
+             <%= dose.description %>
+            <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_dose"></i>
+          <% end %>
           </li>
         <% end %>
       </ul>
