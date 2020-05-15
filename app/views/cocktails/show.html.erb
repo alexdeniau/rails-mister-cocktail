@@ -15,8 +15,8 @@
             <%= dose.ingredient.name %>
              <%= dose.description %>
             <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fa fa-trash destroy_dose"></i>
-          <% end %>
+              <i class="fa fa-trash destroy_dose"></i>
+            <% end %>
           </li>
         <% end %>
       </ul>
